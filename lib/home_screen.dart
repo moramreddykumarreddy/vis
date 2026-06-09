@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   late final PageController _topSliderController;
   Timer? _sliderTimer;
+  String _selectedLanguage = 'English';
 
   @override
   void initState() {
@@ -112,6 +113,46 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         actions: [
+          PopupMenuButton<String>(
+            icon: const Icon(Icons.translate, color: Color(0xFF1F2937), size: 26),
+            onSelected: (String result) {
+              setState(() {
+                _selectedLanguage = result;
+              });
+            },
+            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
+              PopupMenuItem<String>(
+                value: 'English',
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('English'),
+                    if (_selectedLanguage == 'English') const Icon(Icons.check, color: Color(0xFF0F7B45), size: 20),
+                  ],
+                ),
+              ),
+              PopupMenuItem<String>(
+                value: 'Hindi',
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('हिंदी (Hindi)'),
+                    if (_selectedLanguage == 'Hindi') const Icon(Icons.check, color: Color(0xFF0F7B45), size: 20),
+                  ],
+                ),
+              ),
+              PopupMenuItem<String>(
+                value: 'Telugu',
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text('తెలుగు (Telugu)'),
+                    if (_selectedLanguage == 'Telugu') const Icon(Icons.check, color: Color(0xFF0F7B45), size: 20),
+                  ],
+                ),
+              ),
+            ],
+          ),
           Stack(
             alignment: Alignment.center,
             children: [

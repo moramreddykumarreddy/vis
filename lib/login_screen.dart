@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Image.asset(
                     'assets/images/kailasagiri.png',
                     fit: BoxFit.cover,
-                    alignment: Alignment.topCenter,
+                    alignment: Alignment.center,
                     errorBuilder: (context, error, stackTrace) => Container(
                       color: const Color(0xFF0F7B45),
                     ),
@@ -73,12 +73,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: const Text(
-                                'TICKET MANAGEMENT SYSTEM',
+                                'BY VMRDA',
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 10,
+                                  fontSize: 12,
                                   fontWeight: FontWeight.bold,
-                                  letterSpacing: 2.0,
+                                  letterSpacing: 3.0,
                                 ),
                               ),
                             ),
@@ -163,11 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                                 child: Row(
                                   children: [
-                                    Image.asset(
-                                      'assets/images/india_flag.png',
-                                      width: 24,
-                                      errorBuilder: (context, error, stackTrace) => const Icon(Icons.flag, size: 24),
-                                    ),
+                                    const Text('🇮🇳', style: TextStyle(fontSize: 24)),
                                     const SizedBox(width: 8),
                                     const Text(
                                       '+91',
